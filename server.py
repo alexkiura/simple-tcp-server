@@ -9,3 +9,7 @@ class EchoHandler(BaseRequestHandler):
             if not msg:
                 break
             self.request.send(msg)
+
+if __name__ == "__main__":
+    server = TCPServer(('', 20000), EchoHandler)
+    server.serve_forever()
